@@ -95,7 +95,7 @@ public class AdminService {
     }
 
     public List<Map<String, Object>> listUsers(UUID adminId, String userType) {
-        Admin Profile adminProfile = adminProfileRepository.findByUserId(adminId)
+        AdminProfile adminProfile = adminProfileRepository.findByUserId(adminId)
                 .orElseThrow(() -> new UnauthorizedException("Admin profile not found"));
 
         UUID schoolId = adminProfile.getSchool() != null ? adminProfile.getSchool().getSchoolId() : null;
